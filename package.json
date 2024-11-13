@@ -1,0 +1,65 @@
+{
+  "name": "command-template",
+  "type": "module",
+  "version": "1.0.0",
+  "packageManager": "pnpm@9.12.3",
+  "description": "command template",
+  "author": {
+    "name": "ruanbw",
+    "url": "https://github.com/ruanbw"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/ruanbw/command-template",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ruanbw/command-example.git"
+  },
+  "keywords": [
+    "version",
+    "npm",
+    "node",
+    "bower",
+    "package",
+    "command",
+    "prompt"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "cli": "bin/cli.js"
+  },
+  "files": [
+    "bin",
+    "dist"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "watch": "npm run build -- --watch src",
+    "start": "node bin/cli.js",
+    "build": "tsup src/index.ts src/cli/index.ts --format esm --dts --clean",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^12.1.0",
+    "inquirer": "^12.1.0",
+    "ora": "^8.1.1"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^3.8.0",
+    "@types/node": "^22.9.0",
+    "bumpp": "^9.8.1",
+    "eslint": "^9.14.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.6.3"
+  }
+}
