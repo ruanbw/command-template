@@ -10,7 +10,7 @@ export function setupHelloCommand(program: Command) {
     .action((params) => {
       const reportSpinner = ora('await...').start()
       setTimeout(() => {
-        console.log(chalk.bgBlue(`Hello, ${params}!`))
+        console.log(chalk.bgBlue(`Hello, ${params.name}!`))
         reportSpinner.succeed(chalk.green(`Succeed.`))
       }, 3000)
     })
