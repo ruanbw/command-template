@@ -16,6 +16,7 @@
     "stripInternal": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
+    "isolatedDeclarations": true,
     "skipLibCheck": true
   },
   "include": [
